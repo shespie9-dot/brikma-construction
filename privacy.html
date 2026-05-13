@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Politique de confidentialité — Brikma Construction</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Politique de confidentialité de Brikma Construction. Découvrez comment nous collectons, utilisons et protégeons vos informations personnelles conformément à la loi 25 du Québec."/>
+  <meta name="robots" content="index, follow"/>
+  <link rel="canonical" href="https://www.brikmaconstruction.com/privacy"/>
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Politique de confidentialité — Brikma Construction"/>
+  <meta property="og:description" content="Comment Brikma Construction protège vos données personnelles."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://www.brikmaconstruction.com/privacy"/>
+  <meta property="og:locale" content="fr_CA"/>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+
+  <link rel="stylesheet" href="css/style.css"/>
+  <style>
+    /* ---- Privacy page specific styles ---- */
+    .privacy-hero {
+      background: var(--black);
+      padding: 140px 0 80px;
+      position: relative;
+      overflow: hidden;
+    }
+    .privacy-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(212,160,23,.06) 0%, transparent 60%);
+    }
+    .privacy-hero-inner {
+      position: relative;
+      z-index: 1;
+    }
+    .privacy-hero h1 {
+      color: var(--white);
+      margin-bottom: 16px;
+    }
+    .privacy-hero h1 span { color: var(--gold); }
+    .privacy-hero-meta {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+    .privacy-hero-meta span {
+      font-size: .8rem;
+      color: rgba(255,255,255,.4);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .privacy-hero-meta span svg {
+      width: 14px; height: 14px;
+      color: var(--gold);
+    }
+
+    /* Content layout */
+    .privacy-body {
+      background: var(--white);
+      padding: 80px 0 96px;
+    }
+    .privacy-layout {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+
+    /* Sticky sidebar TOC */
+    .privacy-toc {
+      position: sticky;
+      top: 96px;
+    }
+    .privacy-toc-title {
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+    .privacy-toc ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      border-left: 2px solid var(--light);
+    }
+    .privacy-toc ul li a {
+      display: block;
+      padding: 9px 16px;
+      font-size: .82rem;
+      font-weight: 500;
+      color: var(--gray);
+      border-left: 2px solid transparent;
+      margin-left: -2px;
+      transition: color .2s, border-color .2s;
+      line-height: 1.4;
+    }
+    .privacy-toc ul li a:hover {
+      color: var(--gold);
+      border-left-color: var(--gold);
+    }
+    .privacy-toc ul li a.active {
+      color: var(--gold);
+      border-left-color: var(--gold);
+      font-weight: 700;
+    }
+
+    /* Content sections */
+    .privacy-content { min-width: 0; }
+
+    .privacy-section {
+      margin-bottom: 56px;
+      padding-bottom: 56px;
+      border-bottom: 1px solid var(--light);
+    }
+    .privacy-section:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .privacy-section h2 {
+      font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+      color: var(--dark);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .privacy-section h2 .section-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px; height: 36px;
+      min-width: 36px;
+      background: var(--gold);
+      color: var(--black);
+      font-size: .8rem;
+      font-weight: 800;
+      border-radius: 50%;
+    }
+
+    .privacy-section p {
+      font-size: .95rem;
+      color: var(--gray);
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+    .privacy-section p:last-child { margin-bottom: 0; }
+
+    .privacy-section ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin: 16px 0;
+    }
+    .privacy-section ul li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: .92rem;
+      color: var(--gray);
+      line-height: 1.65;
+    }
+    .privacy-section ul li::before {
+      content: '';
+      width: 6px; height: 6px;
+      min-width: 6px;
+      border-radius: 50%;
+      background: var(--gold);
+      margin-top: 8px;
+    }
+
+    .privacy-section h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--dark);
+      margin: 28px 0 12px;
+      letter-spacing: .01em;
+    }
+
+    /* Info box */
+    .privacy-infobox {
+      background: rgba(212,160,23,.07);
+      border: 1px solid rgba(212,160,23,.25);
+      border-radius: var(--radius);
+      padding: 20px 24px;
+      margin: 20px 0;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+    .privacy-infobox svg {
+      width: 20px; height: 20px;
+      min-width: 20px;
+      color: var(--gold);
+      margin-top: 1px;
+    }
+    .privacy-infobox p {
+      font-size: .88rem;
+      color: var(--dark);
+      margin: 0;
+      line-height: 1.7;
+    }
+
+    /* Contact card */
+    .privacy-contact-card {
+      background: var(--cream);
+      border-radius: var(--radius);
+      padding: 32px 36px;
+      display: flex;
+      gap: 24px;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+    .privacy-contact-card-icon {
+      width: 52px; height: 52px;
+      min-width: 52px;
+      background: var(--gold);
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .privacy-contact-card-icon svg { width: 24px; height: 24px; color: var(--black); }
+    .privacy-contact-card-body strong {
+      display: block;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 8px;
+    }
+    .privacy-contact-card-body a {
+      color: var(--gold);
+      font-weight: 600;
+      font-size: .92rem;
+      transition: color .2s;
+    }
+    .privacy-contact-card-body a:hover { color: var(--gold-dk); }
+    .privacy-contact-card-body p {
+      font-size: .88rem;
+      margin-bottom: 4px;
+    }
+
+    /* CTA banner */
+    .privacy-cta {
+      background: var(--dark);
+      border-radius: var(--radius);
+      padding: 40px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin-top: 56px;
+    }
+    .privacy-cta h3 {
+      font-size: 1.5rem;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+    .privacy-cta p {
+      font-size: .9rem;
+      color: rgba(255,255,255,.5);
+      margin: 0;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .privacy-layout { grid-template-columns: 1fr; }
+      .privacy-toc { display: none; }
+    }
+    @media (max-width: 600px) {
+      .privacy-hero { padding: 120px 0 64px; }
+      .privacy-body { padding: 56px 0 72px; }
+      .privacy-cta { padding: 32px 24px; flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ============================================================
+     NAVBAR
+     ============================================================ -->
+<nav id="navbar" aria-label="Navigation principale">
+  <div class="container nav-inner">
+    <a href="index.html#hero" class="nav-logo" aria-label="Brikma Construction — Accueil">
+      <img src="images/logo.png" alt="Brikma Construction — Entrepreneur Général" width="52" height="52" style="border-radius:4px; object-fit:contain;"/>
+    </a>
+
+    <ul class="nav-links" role="list">
+      <li><a href="index.html#about">À propos</a></li>
+      <li><a href="index.html#services">Services</a></li>
+      <li><a href="index.html#gallery">Réalisations</a></li>
+      <li><a href="index.html#faq">FAQ</a></li>
+      <li>
+        <a href="tel:+14389982220" class="nav-phone" aria-label="Appeler Brikma Construction">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.62 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          438-998-2220
+        </a>
+      </li>
+    </ul>
+
+    <a href="index.html#contact" class="btn btn-gold nav-cta">Soumission gratuite</a>
+
+    <button id="nav-toggle" class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile nav overlay -->
+<div id="nav-mobile" class="nav-mobile" role="dialog" aria-modal="true" aria-label="Menu mobile">
+  <button id="nav-mobile-close" class="nav-mobile-close" aria-label="Fermer le menu">&#x2715;</button>
+  <a href="index.html#about">À propos</a>
+  <a href="index.html#services">Services</a>
+  <a href="index.html#gallery">Réalisations</a>
+  <a href="index.html#faq">FAQ</a>
+  <a href="index.html#contact" style="color: var(--gold);">Soumission gratuite</a>
+  <a href="tel:+14389982220">438-998-2220</a>
+</div>
+
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+<div class="privacy-hero">
+  <div class="container privacy-hero-inner">
+    <div class="hero-badge" style="margin-bottom:24px">
+      <span class="hero-badge-dot" aria-hidden="true"></span>
+      Brikma Construction · Laval, Québec
+    </div>
+    <h1>Politique de <span>confidentialité</span></h1>
+    <p style="color:rgba(255,255,255,.55); font-size:1.05rem; max-width:580px; line-height:1.75; margin-top:16px;">
+      Nous respectons votre vie privée. Cette politique explique quelles informations nous
+      recueillons, comment nous les utilisons et comment vous pouvez exercer vos droits.
+    </p>
+    <div class="privacy-hero-meta">
+      <span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        Dernière mise à jour : 13 mai 2026
+      </span>
+      <span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Conforme à la Loi 25 (Québec)
+      </span>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     CONTENT
+     ============================================================ -->
+<div class="privacy-body">
+  <div class="container">
+    <div class="privacy-layout">
+
+      <!-- Sidebar TOC -->
+      <nav class="privacy-toc" aria-label="Table des matières">
+        <div class="privacy-toc-title">Sommaire</div>
+        <ul role="list">
+          <li><a href="#s1">1. Responsable</a></li>
+          <li><a href="#s2">2. Données collectées</a></li>
+          <li><a href="#s3">3. Finalités</a></li>
+          <li><a href="#s4">4. Conservation</a></li>
+          <li><a href="#s5">5. Partage</a></li>
+          <li><a href="#s6">6. Cookies</a></li>
+          <li><a href="#s7">7. Vos droits</a></li>
+          <li><a href="#s8">8. Sécurité</a></li>
+          <li><a href="#s9">9. Mineurs</a></li>
+          <li><a href="#s10">10. Modifications</a></li>
+          <li><a href="#s11">11. Nous joindre</a></li>
+        </ul>
+      </nav>
+
+      <!-- Main content -->
+      <main class="privacy-content" id="privacy-main">
+
+        <div class="privacy-infobox">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          <p>Cette politique s'applique au site web <strong>brikmaconstruction.com</strong> et à toute communication avec Brikma Construction inc. En utilisant notre site ou en nous contactant, vous acceptez les pratiques décrites ci-dessous.</p>
+        </div>
+
+        <!-- Section 1 -->
+        <section class="privacy-section" id="s1">
+          <h2><span class="section-num">1</span> Responsable du traitement</h2>
+          <p>Le responsable du traitement de vos données personnelles est :</p>
+          <div class="privacy-contact-card" style="margin-top:16px">
+            <div class="privacy-contact-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            </div>
+            <div class="privacy-contact-card-body">
+              <strong>Brikma Construction inc.</strong>
+              <p style="color:var(--gray)">Entrepreneur général licencié RBQ — Laval, Québec, Canada</p>
+              <p style="color:var(--gray)">Licence RBQ : <strong style="color:var(--dark)">5804-2102-01</strong></p>
+              <p style="margin-top:8px; color:var(--gray)">Courriel : <a href="mailto:brikma8500@gmail.com">brikma8500@gmail.com</a></p>
+              <p style="color:var(--gray)">Téléphone : <a href="tel:+14389982220">438-998-2220</a></p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 2 -->
+        <section class="privacy-section" id="s2">
+          <h2><span class="section-num">2</span> Données que nous collectons</h2>
+          <p>Nous collectons uniquement les informations nécessaires à la prestation de nos services et à la gestion de notre relation avec vous.</p>
+
+          <h3>2.1 Données fournies directement</h3>
+          <p>Lorsque vous remplissez notre formulaire de soumission ou que vous nous contactez, nous recueillons :</p>
+          <ul>
+            <li>Prénom et nom</li>
+            <li>Adresse courriel</li>
+            <li>Numéro de téléphone</li>
+            <li>Ville ou adresse du projet</li>
+            <li>Type de service demandé</li>
+            <li>Description de votre projet</li>
+          </ul>
+
+          <h3>2.2 Données collectées automatiquement</h3>
+          <p>À la visite de notre site, certaines informations techniques peuvent être collectées automatiquement :</p>
+          <ul>
+            <li>Adresse IP (anonymisée)</li>
+            <li>Type de navigateur et système d'exploitation</li>
+            <li>Pages visitées et durée de la visite</li>
+            <li>Provenance (moteur de recherche, lien direct)</li>
+          </ul>
+          <p>Ces données sont traitées à des fins statistiques uniquement et ne permettent pas de vous identifier personnellement.</p>
+        </section>
+
+        <!-- Section 3 -->
+        <section class="privacy-section" id="s3">
+          <h2><span class="section-num">3</span> Finalités du traitement</h2>
+          <p>Nous utilisons vos données personnelles aux fins suivantes :</p>
+          <ul>
+            <li><strong>Traitement des demandes de soumission</strong> — pour vous contacter, évaluer votre projet et vous remettre un devis.</li>
+            <li><strong>Communication commerciale</strong> — pour répondre à vos questions et assurer le suivi de votre dossier.</li>
+            <li><strong>Amélioration du service</strong> — pour comprendre comment nos visiteurs utilisent notre site et améliorer l'expérience.</li>
+            <li><strong>Obligations légales</strong> — pour satisfaire à nos obligations réglementaires et comptables.</li>
+          </ul>
+
+          <div class="privacy-infobox" style="margin-top:20px">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            <p>Nous ne vendons jamais vos données à des tiers et ne les utilisons pas à des fins de marketing non sollicité.</p>
+          </div>
+        </section>
+
+        <!-- Section 4 -->
+        <section class="privacy-section" id="s4">
+          <h2><span class="section-num">4</span> Durée de conservation</h2>
+          <p>Nous conservons vos données personnelles aussi longtemps que nécessaire aux fins pour lesquelles elles ont été collectées :</p>
+          <ul>
+            <li><strong>Demandes de soumission sans suite</strong> — 12 mois à compter de la réception</li>
+            <li><strong>Clients actifs et contrats</strong> — 7 ans conformément aux exigences fiscales et légales du Québec</li>
+            <li><strong>Données de navigation</strong> — 26 mois maximum</li>
+          </ul>
+          <p>À l'expiration de ces délais, vos données sont supprimées ou anonymisées de façon sécurisée.</p>
+        </section>
+
+        <!-- Section 5 -->
+        <section class="privacy-section" id="s5">
+          <h2><span class="section-num">5</span> Partage de vos données</h2>
+          <p>Brikma Construction ne partage pas vos données personnelles avec des tiers à des fins commerciales. Vos informations peuvent toutefois être transmises dans les cas suivants :</p>
+          <ul>
+            <li><strong>Prestataires techniques</strong> — hébergeur web, service de messagerie électronique, uniquement dans la mesure nécessaire au bon fonctionnement du site.</li>
+            <li><strong>Obligations légales</strong> — si la loi ou une autorité compétente l'exige (tribunaux, autorités fiscales).</li>
+            <li><strong>Sous-traitants de chantier</strong> — avec votre consentement explicite, pour coordonner les travaux de votre projet.</li>
+          </ul>
+          <p>Tout prestataire ayant accès à vos données est contractuellement tenu de les protéger et de ne pas les utiliser à d'autres fins.</p>
+        </section>
+
+        <!-- Section 6 -->
+        <section class="privacy-section" id="s6">
+          <h2><span class="section-num">6</span> Cookies et technologies similaires</h2>
+          <p>Notre site peut utiliser des cookies essentiels au bon fonctionnement des pages. Nous n'utilisons pas de cookies publicitaires ou de traçage comportemental.</p>
+          <h3>Types de cookies utilisés</h3>
+          <ul>
+            <li><strong>Cookies fonctionnels</strong> — mémorisent vos préférences pour améliorer l'expérience de navigation. Durée : session.</li>
+            <li><strong>Cookies analytiques</strong> — mesurent l'audience du site (nombre de visiteurs, pages populaires) de façon anonyme. Durée : maximum 26 mois.</li>
+          </ul>
+          <p>Vous pouvez désactiver les cookies dans les paramètres de votre navigateur. Certaines fonctionnalités du site peuvent alors être limitées.</p>
+        </section>
+
+        <!-- Section 7 -->
+        <section class="privacy-section" id="s7">
+          <h2><span class="section-num">7</span> Vos droits</h2>
+          <p>Conformément à la <strong>Loi sur la protection des renseignements personnels dans le secteur privé (Loi 25)</strong> du Québec, vous disposez des droits suivants :</p>
+          <ul>
+            <li><strong>Droit d'accès</strong> — consulter les données personnelles que nous détenons sur vous.</li>
+            <li><strong>Droit de rectification</strong> — corriger toute information inexacte ou incomplète.</li>
+            <li><strong>Droit à l'effacement</strong> — demander la suppression de vos données, sous réserve de nos obligations légales.</li>
+            <li><strong>Droit à la portabilité</strong> — recevoir vos données dans un format structuré et lisible.</li>
+            <li><strong>Droit de retrait du consentement</strong> — retirer votre consentement à tout moment sans préjudice.</li>
+            <li><strong>Droit d'opposition</strong> — vous opposer à certains traitements de vos données.</li>
+          </ul>
+          <p>Pour exercer l'un de ces droits, contactez-nous à <a href="mailto:brikma8500@gmail.com" style="color:var(--gold); font-weight:600">brikma8500@gmail.com</a>. Nous traiterons votre demande dans un délai de 30 jours.</p>
+          <p>Si vous estimez que vos droits ne sont pas respectés, vous pouvez déposer une plainte auprès de la <strong>Commission d'accès à l'information du Québec (CAI)</strong>.</p>
+        </section>
+
+        <!-- Section 8 -->
+        <section class="privacy-section" id="s8">
+          <h2><span class="section-num">8</span> Sécurité des données</h2>
+          <p>Nous mettons en œuvre des mesures techniques et organisationnelles appropriées pour protéger vos données contre l'accès non autorisé, la perte ou la divulgation :</p>
+          <ul>
+            <li>Transmission chiffrée des données via protocole HTTPS (TLS)</li>
+            <li>Accès aux données limité aux personnes habilitées</li>
+            <li>Revue régulière de nos pratiques de sécurité</li>
+          </ul>
+          <p>En cas d'incident de sécurité susceptible de vous causer un préjudice sérieux, nous vous en informerons conformément à la loi applicable.</p>
+        </section>
+
+        <!-- Section 9 -->
+        <section class="privacy-section" id="s9">
+          <h2><span class="section-num">9</span> Mineurs</h2>
+          <p>Nos services s'adressent exclusivement aux adultes. Nous ne collectons pas sciemment de données personnelles concernant des personnes de moins de 14 ans. Si vous estimez que de telles données ont été transmises par erreur, veuillez nous contacter afin que nous les supprimions sans délai.</p>
+        </section>
+
+        <!-- Section 10 -->
+        <section class="privacy-section" id="s10">
+          <h2><span class="section-num">10</span> Modifications de cette politique</h2>
+          <p>Nous nous réservons le droit de mettre à jour cette politique de confidentialité à tout moment pour refléter les changements dans nos pratiques ou les exigences légales. La date de la dernière mise à jour est indiquée en haut de cette page.</p>
+          <p>En cas de modification substantielle, nous en informerons les utilisateurs par un avis visible sur notre site. Votre utilisation continue du site après publication des modifications vaut acceptation de la nouvelle version.</p>
+        </section>
+
+        <!-- Section 11 -->
+        <section class="privacy-section" id="s11">
+          <h2><span class="section-num">11</span> Nous joindre</h2>
+          <p>Pour toute question relative à cette politique ou à l'utilisation de vos données personnelles, vous pouvez nous contacter :</p>
+          <div class="privacy-contact-card" style="margin-top:20px; gap:32px;">
+            <div>
+              <div class="privacy-contact-card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+            </div>
+            <div class="privacy-contact-card-body" style="display:flex; flex-direction:column; gap:6px;">
+              <strong>Responsable de la protection des renseignements personnels</strong>
+              <p>Brikma Construction inc., Laval (Québec)</p>
+              <p>Courriel : <a href="mailto:brikma8500@gmail.com">brikma8500@gmail.com</a></p>
+              <p>Téléphone : <a href="tel:+14389982220">438-998-2220</a></p>
+              <p style="color:rgba(102,102,102,.7); font-size:.82rem;">Lun–Ven : 7 h – 18 h · Sam : 8 h – 14 h</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- CTA -->
+        <div class="privacy-cta">
+          <div>
+            <h3>Un projet de rénovation ou de maçonnerie ?</h3>
+            <p>Contactez-nous pour une soumission gratuite — sans engagement, réponse sous 24 h.</p>
+          </div>
+          <a href="index.html#contact" class="btn btn-gold">Demander une soumission</a>
+        </div>
+
+      </main>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer aria-label="Pied de page">
+  <div class="container">
+    <div class="footer-grid">
+
+      <div class="footer-brand">
+        <a href="index.html#hero" class="nav-logo" aria-label="Retour en haut">
+          <img src="images/logo.png" alt="Brikma Construction" width="52" height="52" style="border-radius:4px; object-fit:contain;"/>
+        </a>
+        <p>Entrepreneur général licencié RBQ à Laval. Rénovation résidentielle et commerciale, construction, gestion de projets et maçonnerie spécialisée. Travaux assurés et garantis.</p>
+        <div class="footer-social" aria-label="Réseaux sociaux">
+          <a href="#" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="#" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="#" aria-label="Google Maps">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h5>Services</h5>
+        <ul class="footer-links" role="list">
+          <li><a href="index.html#services">Rénovation résidentielle</a></li>
+          <li><a href="index.html#services">Rénovation commerciale</a></li>
+          <li><a href="index.html#services">Construction neuve</a></li>
+          <li><a href="index.html#services">Gestion de projets</a></li>
+          <li><a href="index.html#services">Briquetage & maçonnerie</a></li>
+          <li><a href="index.html#services">Pierre & crépi</a></li>
+          <li><a href="index.html#services">Cheminées & joints</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Navigation</h5>
+        <ul class="footer-links" role="list">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="index.html#about">À propos</a></li>
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="index.html#gallery">Galerie</a></li>
+          <li><a href="index.html#faq">FAQ</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+          <li><a href="privacy.html" style="color:var(--gold)">Confidentialité</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <ul class="footer-links" role="list">
+          <li><a href="tel:+14389982220">438-998-2220</a></li>
+          <li><a href="mailto:brikma8500@gmail.com">brikma8500@gmail.com</a></li>
+          <li><a href="index.html#contact">Soumission gratuite</a></li>
+        </ul>
+        <div style="margin-top:20px; font-size:.8rem; color:rgba(255,255,255,.3)">
+          Lun–Ven : 7 h – 18 h<br>
+          Sam : 8 h – 14 h
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2024 Brikma Construction inc. — Tous droits réservés. · <a href="privacy.html" style="color:rgba(255,255,255,.4); transition:color .2s">Politique de confidentialité</a></div>
+      <div class="footer-rbq">
+        Licence RBQ : <span>5804-2102-01</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Back to top -->
+<button id="back-to-top" aria-label="Retour en haut de la page">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
+
+<!-- Floating CTA -->
+<div class="float-cta" aria-label="Actions rapides">
+  <a href="tel:+14389982220" class="float-btn float-btn-call" aria-label="Appeler Brikma Construction">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.62 1h3a2 2 0 0 1 2 1.72c.18.97.44 1.92.7 2.81a2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.89.26 1.84.52 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    Appeler maintenant
+  </a>
+</div>
+
+<script src="js/main.js" defer></script>
+<script>
+  /* Active TOC link on scroll */
+  (function () {
+    const links = document.querySelectorAll('.privacy-toc a');
+    const sections = document.querySelectorAll('.privacy-section');
+    if (!sections.length) return;
+
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          links.forEach(l => l.classList.remove('active'));
+          const active = document.querySelector(`.privacy-toc a[href="#${e.target.id}"]`);
+          if (active) active.classList.add('active');
+        }
+      });
+    }, { rootMargin: '-20% 0px -70% 0px' });
+
+    sections.forEach(s => obs.observe(s));
+  })();
+</script>
+</body>
+</html>
